@@ -50,3 +50,17 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+compile_commands.json
+easy
+empty
+hard
+invalid1
+invalid2
+invalid3
+invalid4
+invalid5
+invalid6
+Makefile
+medium
+obj

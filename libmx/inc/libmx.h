@@ -4,7 +4,11 @@
 // includes
 #include <fcntl.h>
 #include <limits.h>
-#include <malloc/malloc.h>
+#ifdef __APPLE__
+    #include <malloc/malloc.h>
+#elif  __linux__
+    #include <malloc.h>
+#endif
 #include <stdbool.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -70,6 +74,7 @@ int mx_get_char_index(const char *str, char c);
 int mx_get_substr_index(const char *str, const char *sub);
 int mx_strcmp(const char *s1, const char *s2);
 int mx_strlen(const char *s);
+int mx_strlen_safe(const char *s);
 void mx_del_strarr(char ***arr);
 void mx_strdel(char **str);
 void mx_str_reverse(char *s);
@@ -107,6 +112,7 @@ char *mx_concat_words(char **words);
 char *mx_strchr(const char *s, int c);
 
 int mx_atoi(const char *str);
+long mx_atol(const char *str);
 int mx_check_substr(const char *src, const char *sub);
 int mx_factorial_iter(int n);
 int mx_gcd(int a, int b);
@@ -125,3 +131,4 @@ void mx_printerr(const char *s);
 
 
 #endif
+
